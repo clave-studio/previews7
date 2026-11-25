@@ -189,8 +189,8 @@ video::-webkit-media-controls{display:none!important}
 var RM=matchMedia('(prefers-reduced-motion:reduce)').matches,MOB=matchMedia('(max-width:767px)').matches;
 /* hero video */
 var v=document.getElementById('hv'),hp=document.getElementById('hp'),pre=MOB?'hero-mobile':'hero-desktop';
-hp.src=pre+'.jpg';v.poster=pre+'.jpg';
-if(RM){v.remove()}else{v.src=pre+'.mp4';v.addEventListener('playing',function(){v.classList.add('on')});var pp=v.play();if(pp&&pp.catch)pp.catch(function(){})}
+hp.src=pre+'.jpg';
+v.remove();
 /* reveal */
 var rvs=document.querySelectorAll('.rv');
 if(RM||!('IntersectionObserver' in window)){rvs.forEach(function(e){e.classList.add('in')})}else{
